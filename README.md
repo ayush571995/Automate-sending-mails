@@ -6,3 +6,4 @@ No external libraries required
 
 Library used is smtplib
 
+Also you need to turn off 2step verification for this.
