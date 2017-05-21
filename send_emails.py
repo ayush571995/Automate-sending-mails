@@ -8,9 +8,10 @@ for i in list:
     try:
         msg = MIMEText('hello msg received?')
         msg['Subject'] = 'test_e-mail_sending'
-        msg['From'] = 'galgotiashackathon@gmail.com'
+        msg['From'] = 'address_of_sender'
         msg['To'] = str(i[-1])
+        s.sendmail('address_of_sender',str(i[-1]),msg)
         print('successfully delivered to '+i)
     except:
-        print('not successful')
+        print('not successfully delivered to '+i)
 s.quit()
