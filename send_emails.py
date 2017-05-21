@@ -1,16 +1,16 @@
 import smtplib
 from email.mime.text import MIMEText
-list=open('location of text file ','r').readlines()
+list=open('/home/ayush/Desktop/list_of_emails','r').readlines()
 s = smtplib.SMTP('smtp.gmail.com', port=587)
 s.starttls()
-s.login('e-mailid', 'password')
+s.login('galgotiashackathon@gmail.com', 'gcetloop')
 for i in list:
     try:
         msg = MIMEText('hello msg received?')
         msg['Subject'] = 'test_e-mail_sending'
         msg['From'] = 'galgotiashackathon@gmail.com'
         msg['To'] = str(i[-1])
-        print('successfully delivered to '+i)
+        print('successful')
     except:
         print('not successful')
 s.quit()
